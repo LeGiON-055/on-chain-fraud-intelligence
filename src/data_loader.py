@@ -4,11 +4,6 @@ data_loader.py
 Handles loading, merging, cleaning, and exploring the Ethereum fraud dataset.
 This is the first step in the ML pipeline — garbage in, garbage out.
 
-What you'll learn from this file:
-- Professional pandas data cleaning patterns
-- Handling class imbalance with SMOTE
-- Exploratory Data Analysis (EDA)
-- Type hints and docstrings (Google style)
 """
 
 import os

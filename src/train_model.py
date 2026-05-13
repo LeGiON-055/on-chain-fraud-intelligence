@@ -4,13 +4,6 @@ train_model.py
 Trains an XGBoost fraud detection model with GridSearchCV hyperparameter
 tuning, 5-fold Stratified Cross-Validation, and SHAP explainability.
 
-What you'll learn from this file:
-- XGBoost gradient boosting internals
-- GridSearchCV hyperparameter tuning
-- Stratified K-Fold cross-validation
-- ROC-AUC scoring and why it matters for fraud detection
-- SHAP values for model explainability
-- Saving models with joblib for production use
 """
 
 import joblib

@@ -5,12 +5,6 @@ Engineers 25+ features from raw Ethereum wallet transaction data.
 These features capture behavioral patterns that distinguish fraudulent
 wallets from legitimate ones.
 
-What you'll learn from this file:
-- Feature engineering for fraud detection
-- Pandas groupby, agg, transform patterns
-- Graph-based features (fan-in/fan-out)
-- Time-based behavioral features
-- Google-style docstrings and type hints
 """
 
 import pandas as pd
