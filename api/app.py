@@ -85,7 +85,7 @@ def save_recent_scan(address: str, risk_score: float, verdict: str) -> None:
         'address': address,
         'risk_score': round(risk_score, 4),
         'verdict': verdict,
-        'timestamp': datetime.utcnow().isoformat()
+        'timestamp': datetime.now(datetime.UTC).isoformat()
     })
     # Keep only the most recent scans
     scans = scans[:MAX_RECENT_SCANS]
@@ -124,7 +124,7 @@ def validate_ethereum_address(address: str) -> bool:
 def fetch_transactions_from_etherscan(address: str) -> list:
     """
     Fetch the last 100 transactions for an Ethereum address
-    from the Etherscan API.
+    from the Etherscan API V2.
 
     Args:
         address: Valid Ethereum wallet address.
@@ -137,20 +137,24 @@ def fetch_transactions_from_etherscan(address: str) -> list:
     """
     import requests
 
+    # Etherscan V2 API endpoint
+    url = f"https://api.etherscan.io/v2/api"
+
     params = {
+        'chainid': 1,           # Ethereum mainnet
         'module': 'account',
         'action': 'txlist',
         'address': address,
         'startblock': 0,
         'endblock': 99999999,
         'page': 1,
-        'offset': 100,        # Last 100 transactions
-        'sort': 'desc',       # Most recent first
+        'offset': 100,
+        'sort': 'desc',
         'apikey': config.ETHERSCAN_API_KEY
     }
 
     response = requests.get(
-        config.ETHERSCAN_BASE_URL,
+        url,
         params=params,
         timeout=10
     )
@@ -158,7 +162,6 @@ def fetch_transactions_from_etherscan(address: str) -> list:
     data = response.json()
 
     if data['status'] == '0':
-        # No transactions found is not an error
         if data['message'] == 'No transactions found':
             return []
         raise Exception(f"Etherscan API error: {data['message']}")
@@ -467,7 +470,7 @@ def analyze_wallet():
             'description': verdict_info['description'],
             'top_shap_signals': top_shap_signals,
             'transaction_count': len(transactions),
-            'timestamp': datetime.utcnow().isoformat()
+            'timestamp': datetime.now(datetime.UTC).isoformat()  
         }
 
         print(f"  Risk score: {risk_score:.4f} → {verdict_info['verdict']}")
@@ -605,7 +608,8 @@ if __name__ == '__main__':
     print("="*60 + "\n")
 
     app.run(
-        host='0.0.0.0',
-        port=config.FLASK_PORT,
-        debug=(config.FLASK_ENV == 'development')
-    )
+    host='0.0.0.0',
+    port=config.FLASK_PORT,
+    debug=False,
+    use_reloader=False
+)

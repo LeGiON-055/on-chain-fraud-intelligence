@@ -14,7 +14,7 @@ load_dotenv()
 
 # ── Etherscan ─────────────────────────────────────────────────────────────────
 ETHERSCAN_API_KEY: str = os.getenv("ETHERSCAN_API_KEY", "")
-ETHERSCAN_BASE_URL: str = "https://api.etherscan.io/api"
+ETHERSCAN_BASE_URL: str = "https://api.etherscan.io/v2/api"
 
 # ── Groq / LLaMA ──────────────────────────────────────────────────────────────
 GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
