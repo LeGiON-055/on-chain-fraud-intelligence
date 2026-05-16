@@ -17,7 +17,7 @@ import numpy as np
 import pandas as pd
 
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from groq import Groq
@@ -85,7 +85,7 @@ def save_recent_scan(address: str, risk_score: float, verdict: str) -> None:
         'address': address,
         'risk_score': round(risk_score, 4),
         'verdict': verdict,
-        'timestamp': datetime.now(datetime.UTC).isoformat()
+        'timestamp': datetime.utcnow().isoformat()
     })
     # Keep only the most recent scans
     scans = scans[:MAX_RECENT_SCANS]
@@ -470,7 +470,7 @@ def analyze_wallet():
             'description': verdict_info['description'],
             'top_shap_signals': top_shap_signals,
             'transaction_count': len(transactions),
-            'timestamp': datetime.now(datetime.UTC).isoformat()  
+            'timestamp': datetime.now(timezone.utc).isoformat()  
         }
 
         print(f"  Risk score: {risk_score:.4f} → {verdict_info['verdict']}")

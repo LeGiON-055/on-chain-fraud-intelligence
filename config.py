@@ -18,7 +18,7 @@ ETHERSCAN_BASE_URL: str = "https://api.etherscan.io/v2/api"
 
 # ── Groq / LLaMA ──────────────────────────────────────────────────────────────
 GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
-GROQ_MODEL: str = "llama3-70b-8192"
+GROQ_MODEL: str = "llama-3.3-70b-versatile"
 
 # ── Alchemy ───────────────────────────────────────────────────────────────────
 ALCHEMY_API_KEY: str = os.getenv("ALCHEMY_API_KEY", "")
