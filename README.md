@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![XGBoost](https://img.shields.io/badge/XGBoost-2.0-FF6600?style=for-the-badge)](https://xgboost.readthedocs.io)
 [![Flask](https://img.shields.io/badge/Flask-3.0-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com)
-[![Streamlit](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://your-app.streamlit.app)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://on-chain-fraud-intel.streamlit.app)
 [![Groq](https://img.shields.io/badge/Groq-LLaMA_3_70B-F55036?style=for-the-badge)](https://console.groq.com)
 [![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
 
@@ -16,7 +16,7 @@
 
 <br/>
 
-[🚀 Live Demo](https://your-app.streamlit.app) · [📖 Documentation](#-how-it-works) · [🐛 Report Bug](https://github.com/LeGiON-055/on-chain-fraud-intelligence/issues) · [⭐ Star this repo](https://github.com/LeGiON-055/on-chain-fraud-intelligence)
+[🚀 Live Demo](https://on-chain-fraud-intel.streamlit.app) · [📖 Documentation](#-how-it-works) · [🐛 Report Bug](https://github.com/LeGiON-055/on-chain-fraud-intelligence/issues) · [⭐ Star this repo](https://github.com/LeGiON-055/on-chain-fraud-intelligence)
 
 <br/>
 
