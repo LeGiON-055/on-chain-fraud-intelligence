@@ -36,7 +36,8 @@ st.set_page_config(
 )
 
 # ── Constants ─────────────────────────────────────────────────────────────────
-API_BASE_URL = "http://localhost:5000"
+import os
+API_BASE_URL = os.environ.get("API_BASE_URL", "http://localhost:5000")
 RECENT_SCANS_FILE = Path("data/recent_scans.json")
 
 # ── Custom CSS ────────────────────────────────────────────────────────────────

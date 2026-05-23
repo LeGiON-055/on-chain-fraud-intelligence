@@ -609,7 +609,7 @@ if __name__ == '__main__':
 
     app.run(
     host='0.0.0.0',
-    port=config.FLASK_PORT,
+    port=int(os.environ.get('PORT', config.FLASK_PORT)),
     debug=False,
     use_reloader=False
 )
